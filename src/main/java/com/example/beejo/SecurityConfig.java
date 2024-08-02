@@ -27,7 +27,8 @@ public class SecurityConfig {
                                 "/series",
                                 "/titleSearch",
                                 "/login",
-                                "/register").permitAll()
+                                "/register",
+                                "/user").permitAll()
                                 .anyRequest().authenticated()
                 );
     return http.build();
