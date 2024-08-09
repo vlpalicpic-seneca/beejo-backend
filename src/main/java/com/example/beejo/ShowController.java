@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "https://beejo.vercel.app/")
 public class ShowController {
     @Autowired
     private ShowService showService;
@@ -63,7 +64,7 @@ public class ShowController {
     }
 
     //8
-    @PostMapping("/movies/edit")
+    @PutMapping("/movies/edit")
     public ResponseEntity<Show> editMovie(@RequestBody Show show){
         Show editedShow = showService.saveShow(show);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -83,7 +84,7 @@ public class ShowController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PostMapping("/series/edit")
+    @PutMapping("/series/edit")
     public ResponseEntity<Show> editSeries(@RequestBody Show show){
         Show editedShow = showService.saveShow(show);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);

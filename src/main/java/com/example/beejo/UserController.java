@@ -10,6 +10,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "https://beejo.vercel.app/")
 public class UserController {
     @Autowired
     private UserService userService;
